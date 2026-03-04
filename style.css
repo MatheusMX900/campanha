@@ -127,14 +127,14 @@ body {
 
 .phrase-container h2 {
     font-size: 2.2rem;
-    font-weight: 300;
+    font-weight: 700;
     margin-bottom: 2rem;
-    color: #333;
+    color: #000000;
 }
 
 .phrase-container h3 {
     font-size: 1.8rem;
-    font-weight: 300;
+    font-weight: 700;
     margin-bottom: 2rem;
 }
 
@@ -159,7 +159,7 @@ body {
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--success-color);
+    color: rgb(6, 238, 6);
     font-weight: 900;
 }
 
@@ -243,9 +243,19 @@ body {
 
 /* Vitrine de Fotos */
 .photo-showcase {
-    padding: 30px 0;
+    padding: 80px 0;
     text-align: center;
     background-color: #000;
+}
+
+.showcase-main-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    text-transform: none;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 4rem;
 }
 
 /* Cor do título da categoria mais clara */
@@ -255,14 +265,6 @@ body {
     color: #a8a6a6; /* Alterado de #666 para #888 para ficar mais claro */
     margin-bottom: 2rem;
     font-weight: 400;
-}
-
-.showcase-main-title {
-    font-family: 'Cinzel', serif;
-    font-size: 2.2rem;
-    font-weight: 400;
-    color: #fff;
-    margin-bottom: 4rem;
 }
 
 .showcase-grid, .showcase-grid-bw {
@@ -292,7 +294,8 @@ body {
 
 /* BLOCO 5 - BÔNUS */
 .bonuses {
-    padding: 100px 0;
+    padding: 10px 0;
+    margin-top: 100px;
     text-align: center;
 }
 
@@ -450,7 +453,7 @@ body {
 }
 
 .offer-tag {
-    background: #000;
+    background: #aa0d0d;
     color: #fff;
     padding: 5px 15px;
     font-size: 0.8rem;
@@ -487,7 +490,7 @@ body {
 
 .old-price {
     font-size: 1.1rem;
-    color: #888;
+    color: #aa0d0d;
 }
 
 .old-price span {
@@ -538,6 +541,45 @@ body {
     .main-price {
         font-size: 3rem;
     }
+}
+
+/* BLOCO DE GARANTIA (Padrão Referência) */
+.guarantee-section {
+    padding: 80px 0; /* Aumentado para dar mais "respiro" como na referência */
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+}
+
+.seal-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px; /* Espaçamento claro abaixo do selo */
+}
+
+.guarantee-seal {
+    width: 250px; /* Levemente reduzido para equilíbrio visual */
+    height: auto;
+}
+
+.guarantee-content h4 {
+    /* Título: Sans-serif, grande, em caixa alta e negrito */
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 3rem; /* Aumentado de 1.5rem para destaque */
+    font-weight: 800;
+    text-transform: uppercase; /* Caixa alta forçada */
+    margin-bottom: 2.5rem;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.guarantee-text p {
+    /* Parágrafo: Tamanho padrão de corpo de texto, mais legível */
+    font-size: 1.5rem; /* Reduzido dramaticamente de 1.5rem */
+    color: #ffffff;
+    max-width: 700px; /* Aumentado levemente para acomodar o texto menor */
+    margin: 0 auto 1.5rem auto; /* Centralizado com margem inferior entre parágrafos */
+    line-height: 1.6; /* Espaçamento entre linhas melhorado para leitura */
 }
 
 /* FAQ */
