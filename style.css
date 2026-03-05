@@ -545,9 +545,9 @@ body {
 
 /* BLOCO DE GARANTIA (Padrão Referência) */
 .guarantee-section {
-    padding: 80px 0; /* Aumentado para dar mais "respiro" como na referência */
+    padding: 20px 0; /* Aumentado para dar mais "respiro" como na referência */
     text-align: center;
-    background-color: #000;
+    background-color: #131313;
     color: #fff;
 }
 
@@ -568,14 +568,14 @@ body {
     font-size: 3rem; /* Aumentado de 1.5rem para destaque */
     font-weight: 800;
     text-transform: uppercase; /* Caixa alta forçada */
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.3rem;
     color: #fff;
     letter-spacing: 1px;
 }
 
 .guarantee-text p {
     /* Parágrafo: Tamanho padrão de corpo de texto, mais legível */
-    font-size: 1.5rem; /* Reduzido dramaticamente de 1.5rem */
+    font-size: 1.3rem; /* Reduzido dramaticamente de 1.5rem */
     color: #ffffff;
     max-width: 700px; /* Aumentado levemente para acomodar o texto menor */
     margin: 0 auto 1.5rem auto; /* Centralizado com margem inferior entre parágrafos */
@@ -614,13 +614,54 @@ summary {
 summary::after { content: '+'; font-size: 1.5rem; }
 details[open] summary::after { content: '-'; }
 
-/* Rodapé */
+/* BLOCO 11 - RODAPÉ (FOOTER) */
+
 .footer {
-    padding: 40px 0;
+    background-color: #000000; /* Fundo preto expansivo de ponta a ponta */
+    padding: 60px 0;           /* Espaçamento vertical interno */
+    width: 100%;               /* Garante que ocupe toda a largura */
     text-align: center;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #222; /* Linha sutil no topo para separação */
+}
+
+/* O container mantém o conteúdo centralizado e dentro da largura padrão */
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* Centraliza horizontalmente no flex */
+    justify-content: center;   /* Centraliza verticalmente no flex */
+    margin: 0 auto;            /* Garante que o container em si esteja no centro da tela */
+    width: 100%;
+}
+
+.footer-logo {
+    width: 140px;             /* Tamanho do logo Ella Academy */
+    height: auto;
+    margin-left: auto;        /* Reforço de centralização para block elements */
+    margin-right: auto;       /* Reforço de centralização para block elements */
+    margin-bottom: 20px;
+    display: block;           /* Permite que as margens auto funcionem */
+    
+}
+
+.footer p {
+    color: #888;              /* Tom de cinza para o copyright */
     font-size: 0.9rem;
-    color: #888;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    text-align: center;       /* Garante que o texto também esteja no centro */
+    letter-spacing: 0.5px;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 20px;
+    }
+    
+    .footer-logo {
+        width: 120px;
+    }
 }
 
 /* Responsividade Geral */
@@ -636,3 +677,119 @@ details[open] summary::after { content: '-'; }
     .hero-img, .benefit-card img, .showcase-grid img { height: 350px; }
     .btn-main { width: 100%; text-align: center; }
 }
+
+/* ESTILOS DE CONTATO (BLOCO 09) */
+.contact-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #ffffff; /* Fundo branco para contrastar com o próximo bloco */
+    color: #333;
+}
+
+.contact-section h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+/* Reutilizando a variável de sucesso que definimos anteriormente */
+.btn-primary {
+    display: inline-block;
+    background: #6bc146; /* Cor de sucesso/verde */
+    color: #fff;
+    padding: 1.0rem 2.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    border-radius: 50px; 
+    box-shadow: 0 4px 15px rgba(107, 193, 70, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* BLOCO 10 - APRESENTAÇÃO (QUEM SOU EU) */
+.about-section {
+    padding: 60px 0 100px;
+    background-color: #f7f7f7; /* Background expansível de ponta a ponta conforme solicitado */
+    width: 100%;
+}
+
+.about-card {
+    background-color: #ffffff; /* Card branco sobre o fundo cinza claro */
+    border-radius: 40px;      /* Arredondamento de 40px da referência */
+    display: flex;             /* Coloca imagem e texto lado a lado */
+    align-items: center;       /* Alinha verticalmente ao centro */
+    padding: 60px;
+    gap: 60px;                 /* Espaço entre a foto e o conteúdo */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.about-image-wrapper {
+    flex: 1;
+    max-width: 450px;          /* Controla o tamanho máximo da imagem */
+}
+
+.about-img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;       /* Foto ligeiramente menos arredondada que o card para harmonia */
+    display: block;
+    object-fit: cover;
+}
+
+.about-content {
+    flex: 1.5;
+    text-align: left;          /* Alinhamento à esquerda conforme o modelo */
+}
+
+.about-content h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #000;
+    line-height: 1.2;
+}
+
+.about-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.about-text strong {
+    font-weight: 700;
+    color: #000;
+}
+
+/* RESPONSIVIDADE (Ajuste para Telemóveis e Tablets) */
+@media (max-width: 992px) {
+    .about-card {
+        flex-direction: column; /* No telemóvel a foto fica em cima do texto */
+        padding: 40px 20px;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .about-content {
+        text-align: center;
+    }
+    
+    .about-image-wrapper {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .about-content h2 {
+        font-size: 2rem;
+    }
+}
+
