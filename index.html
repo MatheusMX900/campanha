@@ -95,10 +95,13 @@
         
         .btn-main { 
             display: inline-block; background: var(--success-color); color: #fff; 
-            padding: 1.1rem 2.2rem; text-decoration: none; font-weight: 800; font-size: 1.1rem; 
+            padding: 1.3rem 2.2rem; text-decoration: none; font-weight: 800; font-size: 1.1rem; 
             border-radius: 50px; box-shadow: 0 4px 15px rgba(107, 193, 70, 0.4); 
             transition: 0.3s; border: none; cursor: pointer; text-align: center;
         }
+
+        .cta-center-wrapper .btn-main { padding: 1.3rem 2.2rem; font-size: 1.1rem; }
+
         .btn-main:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 6px 20px rgba(107, 193, 70, 0.5); }
 
         /* SEÇÃO 2: PROBLEMA/SOLUÇÃO COM SLIDER */
@@ -191,7 +194,7 @@
 
 
         /* Checkout */
-        .checkout-card { background: #fff; border: 1px solid #eee; border-radius: 30px; padding: clamp(30px, 6vw, 70px); box-shadow: 0 20px 50px rgba(0,0,0,0.06); margin-top: 20px; }
+        /*.checkout-card { background: #fff; border: 1px solid #eee; border-radius: 30px; padding: clamp(30px, 6vw, 70px); box-shadow: 0 20px 50px rgba(0,0,0,0.06); margin-top: 20px; }
         .checkout-content { display: flex; align-items: center; gap: 50px; }
         .checkout-left { flex: 1; }
         .checkout-right { flex: 1.2; text-align: left; }
@@ -200,7 +203,31 @@
         .offer-list { list-style: none; margin: 2rem 0; }
         .offer-list li { padding: 12px 0; border-bottom: 1px solid #f5f5f5; font-size: 1.1rem; }
         .old-price { color: #aa0d0d; font-size: 1.1rem; text-decoration: line-through; }
-        .main-price { font-size: clamp(3rem, 10vw, 4.5rem); font-weight: 800; color: var(--success-color); display: block; line-height: 1; margin: 10px 0; }
+        .main-price { font-size: clamp(3rem, 10vw, 4.5rem); font-weight: 800; color: var(--success-color); display: block; line-height: 1; margin: 10px 0; }*/
+
+        /* --- NOVA SEÇÃO DE OFERTAS (Cards Otimizados) --- */
+        .offers-wrapper { display: flex; gap: 30px; justify-content: center; margin-top: 40px; }
+
+        .offer-card { background: #fff; border: 2px solid #e0e0e0; border-radius: 20px; padding: 40px 30px; flex: 1; max-width: 480px; display: flex; flex-direction: column;
+            position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
+
+        .offer-card.featured { border-color: #2e3192; /* Azul destaque */ transform: scale(1.05); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+
+        .most-sold-badge { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #ffcc00; color: #000;
+            padding: 8px 25px; border-radius: 50px; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; white-space: nowrap; }
+
+        .offer-card h2 { font-size: 1.2rem; color: #666; margin-bottom: 10px; text-align: center; }
+        .offer-card h3 { font-size: 1.4rem; line-height: 1.3; margin-bottom: 25px; text-align: center; font-family: 'Cinzel', serif; min-height: 80px; display: flex; align-items: center; justify-content: center;}
+
+        .offer-features { list-style: none; padding: 0; margin-bottom: 30px; flex-grow: 1; }
+        .offer-features li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; line-height: 1.4; display: flex; gap: 10px; }
+        .offer-features li::before { content: '✓'; color: var(--success-color); font-weight: bold; }
+
+        .price-box { text-align: center; margin-top: auto; padding-top: 20px; border-top: 2px solid #f9f9f9; }
+        .old-price { color: #aa0d0d; text-decoration: line-through; font-size: 1rem; }
+        .installments { font-size: 1.1rem; margin-top: 5px; }
+        .main-price { font-size: 3.5rem; font-weight: 800; color: var(--success-color); line-height: 1; margin: 10px 0; display: block; }
+        .cash-price { font-size: 0.9rem; color: #666; }
 
         /* Garantia */
         .guarantee-section { background-color: #131313; color: #fff; text-align: center; padding: 40px; }
@@ -263,6 +290,8 @@
             .photo-result img { border-radius: 10px; }
             .nav-btn { display: none; } /* Esconde setas no toque */
 
+            .cta-center-wrapper .btn-main { padding: 1.3rem 1.2rem; font-size: 1.1rem; }
+
             /* PONTO 3: BENEFÍCIOS TELA INTEIRA */
             .benefits-header h2 { font-size: 1.5rem; }
             .benefits { min-height: 100vh;}
@@ -284,6 +313,11 @@
             .testimonials-header { text-align: center; }
             .label-text { text-align: center; }
 
+            /* Checkout */
+            .offers-wrapper { flex-direction: column; align-items: center; gap: 50px; }
+            .offer-card { width: 100%; max-width: 400px; }
+            .offer-card.featured { transform: scale(1); }
+
                 /* PONTO 3: BOTÃO CENTRALIZADO COM MAIS ESPAÇO */
             .hero-images-showcase { grid-template-columns: 1fr; }
             .hero-img { height: auto; aspect-ratio: 3/4; }
@@ -291,7 +325,7 @@
             .checkout-content, .about-card { flex-direction: column; text-align: center; }
             .checkout-right, .about-content { text-align: center; }
             .about-image-wrapper { max-width: 100%; margin: 0 auto; }
-            .btn-main { width: 100%; padding: 1.0rem 1rem; font-size: 1rem; }
+            .btn-main { width: 100%; padding: 1.2rem 1.0rem; font-size: 1.1rem; }
             .showcase-grid img, .showcase-grid-bw img { height: auto; aspect-ratio: 3/4; }
             .bonus-single-img { height: auto; aspect-ratio: 4/5; }
             .photo-result img { height: auto; aspect-ratio: 1/1; }
@@ -540,7 +574,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </section>
 
         <!-- CHECKOUT -->
-        <section class="checkout-section container">
+        <!-- <section class="checkout-section container">
             <div class="checkout-card">
                 <div class="checkout-content">
                     <div class="checkout-left">
@@ -568,6 +602,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             </div>
+        </section> -->
+
+        <section id="offer-tag" class="checkout-section container">
+            <div class="testimonials-header" style="margin-bottom: 40px;">
+                <h2 style="font-family: 'Cinzel', serif; text-transform: uppercase;">Você tem duas opções:</h2>
+            </div>
+        
+            <div class="offers-wrapper">
+                <article class="offer-card" aria-labelledby="opt1-title">
+                    <h2 id="opt1-title">OPÇÃO 1</h2>
+                    <h3>+ DE 200 PROMPTS PARA COPIAR E COLAR</h3>
+                    <ul class="offer-features">
+                        <li>Diversas poses, cenários e figurinos</li>
+                        <li>BÔNUS prompts para fotos mulher feminina</li>
+                        <li>BÔNUS prompts para fotos comemorativas</li>
+                        <li>BÔNUS Melhorador de fotos</li>
+                        <li>Orientações sobre como utilizar a IA gratuita</li>
+                        <li>Passo a passo para personalizar os prompts</li>
+                    </ul>
+                    <div class="price-box">
+                        <p class="old-price">De R$ 147,00</p>
+                        <p class="installments">Por apenas 3x de</p>
+                        <span class="main-price">R$ 13,20</span>
+                        <p class="cash-price">ou R$ 37,00 à vista</p>
+                        <a href="https://pay.kiwify.com.br/KQYKHcA" class="btn-main" style="width: 100%; margin-top: 20px;">QUERO ESSA OPÇÃO</a>
+                    </div>
+                </article>
+            
+                <article class="offer-card featured" aria-labelledby="opt2-title">
+                    <div class="most-sold-badge">★ MAIS VENDIDO</div>
+                    <h2 id="opt2-title">OPÇÃO 2</h2>
+                    <h3>Pack Completo: Use ou Revenda e Lucre!</h3>
+                    <ul class="offer-features">
+                        <li><strong>TUDO da Opção 1 inclusos</strong></li>
+                        <li>Como criar e modelar seus próprios prompts</li>
+                        <li>Estratégia para vender 01 ensaio por dia</li>
+                        <li>Scripts de venda para converter clientes</li>
+                        <li>Modelos de posts e anúncios no Canva</li>
+                        <li style="color: #2e3192; font-weight: bold;">Direito de revenda do pack</li>
+                    </ul>
+                    <div class="price-box">
+                        <p class="old-price">De R$ 197,00</p>
+                        <p class="installments">Por apenas 3x de</p>
+                        <span class="main-price">R$ 23,91</span>
+                        <p class="cash-price">ou R$ 67,00 à vista</p>
+                        <a href="https://pay.kiwify.com.br/VjKDmbg" class="btn-main" style="width: 100%; margin-top: 20px; background: #2e3192;">QUERO LEVAR TUDO POR 67</a>
+                    </div>
+                </article>
+            </div>
+
+            <p class="secure-checkout" style="margin-top: 40px; color: #999; font-size: 0.8rem; text-align: center;">🔒 Pagamento 100% seguro e acesso imediato via Kiwify.</p>
         </section>
 
         <!-- GARANTIA -->
