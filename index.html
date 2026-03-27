@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <script>
+        // Bloqueia a restauração de posição ANTES de carregar o resto do site
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+    </script>
 
     <!-- Preload da Imagem LCP (Hero) - Garante carregamento imediato -->
     <link rel="preload" as="image" href="fotosProfissionaisComIA/antes_e_depois_bianca.webp" fetchpriority="high">
-
-    <!-- Google Tag Manager -->
-    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-5QG33XB8"></script>
-    <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-5QG33XB8');
-    </script>
-    <!-- End Google Tag Manager -->
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -32,7 +27,7 @@
     <meta property="og:description" content="Transforme a sua imagem digital com IA gratuita. Resultados ultra-realistas.">
     
     <!-- Link Absoluto para o Banner (Recomendado 1200x630px) -->
-    <meta property="og:image" content="https://ellaquebrilha.online/fotos-profissionais-com-ia/fotosProfissionaisComIA/banner-social.jpg">
+    <meta property="og:image" content="https://ellaquebrilha.online/fotos-profissionais-com-ia/fotosProfissionaisComIA/banner-social.webp">
     <meta property="og:image:secure_url" content="https://ellaquebrilha.online/fotos-profissionais-com-ia/fotosProfissionaisComIA/banner-social.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -54,7 +49,6 @@
             --success-color: #6bc146;
             --alert-color: #aa0d0d;
             --gray-light: #f7f7f7;
-            --gray-medium: #888;
             --container-width: 1100px;
             /* Variável para o respiro padrão entre seções */
             --section-padding: clamp(60px, 12vw, 100px);
@@ -64,7 +58,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
         html { scroll-behavior: smooth; overflow-x: hidden; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.4; overflow-x: hidden; }
-        img { max-width: 100%; height: auto; display: block; content-visibility: auto; }
+        img { max-width: 100%; height: auto; display: block; content-visibility: auto; aspect-ratio: auto; }
         .container { max-width: var(--container-width); margin: 0 auto; padding: 0 20px; width: 100%; }
 
         /* Espaçamento Padrão para Seções - Ajustado para dar mais "ar" */
@@ -116,10 +110,10 @@
 
         /* Slider de Resultados (Carrossel) */
         .slider-wrapper { position: relative; max-width: 900px; margin: 0 auto; }
-        .results-slider { 
-            display: flex; overflow-x: auto; scroll-snap-type: x mandatory; 
-            gap: 15px; padding: 10px 0; scrollbar-width: none; -ms-overflow-style: none;
+        .results-slider { display: flex; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; gap: 15px; padding: 10px 0; 
+            scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;
         }
+        
         .results-slider::-webkit-scrollbar { display: none; }
         .photo-result { flex: 0 0 100%; scroll-snap-align: center; display: flex; justify-content: center; }
         .photo-result img { width: 100%; max-width: 400px; height: auto; border-radius: 15px; object-fit: cover; }
@@ -319,7 +313,20 @@
             .cta-center-wrapper { margin: 50px 0; }
         }
     </style>
+    
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5QG33XB8');
+    </script>
+    <!-- End Google Tag Manager -->
+    
+    
 </head>
+
 <body>
     
     <!-- Google Tag Manager (noscript) -->
@@ -338,7 +345,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <section class="hero container">
             <div class="hero-content">
                 <img src="fotosProfissionaisComIA/logo.webp" alt="Logo Fotos Profissionais" class="logo" width="300" height="150" fetchpriority="high">
-                <h1>Fotos Profissionais com IA direto pelo celular!</strong></h1>
+                <h1>Fotos Profissionais com IA direto pelo celular!</h1>
                 <p>
                     Copie e cole os prompts para transformar <strong>selfies em fotos ultra realistas</strong> ou lucrar no digital!</strong>
                 </p>
@@ -715,23 +722,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </footer>
 
-    <!-- SCRIPT PARA EVITAR ROLAGEM AUTOMÁTICA NO CARREGAMENTO -->
     <script>
-        // Impede que o navegador tente restaurar a posição anterior ao recarregar
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-
-        // Garante que a página comece no topo (0,0) ao terminar de carregar
-        window.scrollTo(0, 0);
-
-        // Adiciona um pequeno atraso para garantir o reset em dispositivos mais lentos
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                window.scrollTo(0, 0);
-            }, 10);
+    // Garante o topo em todos os carregamentos e navegações de histórico
+        window.addEventListener('pageshow', function() {
+            window.scrollTo(0, 0);
         });
-    </script>
+
+        // Reset imediato no carregamento do DOM
+        document.addEventListener('DOMContentLoaded', function() {
+                window.scrollTo(0, 0);
+        });
+</script>
 
 </body>
 </html>
